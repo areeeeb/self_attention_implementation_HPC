@@ -5,7 +5,7 @@ import os
 import time
 
 # Parameters
-EMBEDDINGS_DIR = "./wikitext_embeddings"  # Directory where embeddings are saved
+EMBEDDINGS_DIR = "../wikitext_embeddings"  # Directory where embeddings are saved
 SEQUENCE_LENGTHS = [32, 64, 128, 256, 512, 1024]
 HIDDEN_SIZE = 768  # GPT-2 hidden size
 NUM_HEADS = 1     # Number of attention heads
