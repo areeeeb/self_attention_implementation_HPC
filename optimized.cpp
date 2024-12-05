@@ -4,7 +4,7 @@
 using json = nlohmann::json;
 
 // Naive self-attention computation
-std::vector<std::vector<float>> run_naive_attention(const std::vector<std::vector<float>> &input, const json &weights)
+std::vector<std::vector<float>> run_optimized_attention(const std::vector<std::vector<float>> &input, const json &weights)
 {
     size_t sequence_length = input.size();
     size_t hidden_size = input[0].size();
