@@ -1,0 +1,20 @@
+Using device: cpu
+Loaded attention weights from ./attention_results/attention_weights.json
+Processing sequence length: 32
+Average inference time for sequence length 32: 0.003773 seconds
+Validation passed for sequence length 32
+Processing sequence length: 64
+Average inference time for sequence length 64: 0.007042 seconds
+Validation passed for sequence length 64
+Processing sequence length: 128
+Average inference time for sequence length 128: 0.019398 seconds
+Validation passed for sequence length 128
+Processing sequence length: 256
+Average inference time for sequence length 256: 0.042186 seconds
+Validation passed for sequence length 256
+Processing sequence length: 512
+Average inference time for sequence length 512: 0.056307 seconds
+Validation passed for sequence length 512
+Processing sequence length: 1024
+Average inference time for sequence length 1024: 0.262186 seconds
+Validation passed for sequence length 1024
