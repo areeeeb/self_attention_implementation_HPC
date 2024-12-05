@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Iinclude -O2
+CXXFLAGS = -std=c++17 -Iinclude -fopenmp
 TARGET = main
 SRC = main.cpp naive.cpp optimized.cpp
 
