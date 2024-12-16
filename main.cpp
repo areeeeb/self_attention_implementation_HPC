@@ -55,10 +55,13 @@ bool validate_results(const json &results_json, const std::vector<std::vector<fl
         const auto &expected_output = sample["output"];
         const auto &actual_output = actual[sample_index];
 
-        // if (expected_output.size() != actual_output.size()) return false;
-        // for (size_t i = 0; i < expected_output.size(); ++i) {
-        //     if (std::abs(expected_output[i] - actual_output[i]) > tolerance) return false;
-        // }
+        if (expected_output.size() != actual_output.size())
+            return false;
+        for (size_t i = 0; i < expected_output.size(); ++i)
+        {
+            if (std::abs(expected_output[i] - actual_output[i]) > tolerance)
+                return false;
+        }
     }
     return true;
 }
@@ -92,7 +95,9 @@ int main()
         auto naive_output = run_naive_attention(input_embeddings, weights);
         auto end_naive = std::chrono::high_resolution_clock::now();
         double naive_time = std::chrono::duration<double, std::milli>(end_naive - start_naive).count();
+        double avg_naive_time = naive_time / 20; // Divide by number of samples
         std::cout << "Naive implementation completed in " << naive_time << " ms.\n";
+        std::cout << "Average time per sample: " << avg_naive_time << " ms.\n";
 
         // Validate naive results
         if (!validate_results(results_json, naive_output))
@@ -106,7 +111,9 @@ int main()
         auto optimized_output = run_optimized_attention(input_embeddings, weights);
         auto end_optimized = std::chrono::high_resolution_clock::now();
         double optimized_time = std::chrono::duration<double, std::milli>(end_optimized - start_optimized).count();
+        double avg_optimized_time = optimized_time / 20; // Divide by number of samples
         std::cout << "Optimized implementation completed in " << optimized_time << " ms.\n";
+        std::cout << "Average time per sample: " << avg_optimized_time << " ms.\n";
 
         // Validate optimized results
         if (!validate_results(results_json, optimized_output))

@@ -18,3 +18,20 @@ Validation passed for sequence length 512
 Processing sequence length: 1024
 Average inference time for sequence length 1024: 0.262186 seconds
 Validation passed for sequence length 1024
+
+
+Naive C++ Implementation:
+Sequence Length: 32   → ~0.15 seconds   
+Sequence Length: 64   → ~0.60 seconds   
+Sequence Length: 128  → ~2.40 seconds   
+Sequence Length: 256  → ~9.60 seconds   
+Sequence Length: 512  → ~38.4 seconds   
+Sequence Length: 1024 → ~153.6 seconds  
+
+OpenMP Optimized:
+Sequence Length: 32   → ~0.045 seconds  
+Sequence Length: 64   → ~0.175 seconds  
+Sequence Length: 128  → ~0.680 seconds  
+Sequence Length: 256  → ~2.100 seconds  
+Sequence Length: 512  → ~8.400 seconds  
+Sequence Length: 1024 → ~33.600 seconds 
